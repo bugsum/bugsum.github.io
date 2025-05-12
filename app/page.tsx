@@ -1,103 +1,154 @@
-import Image from "next/image";
+import ExperienceCard from '@/components/cards/experience';
+import ProjectCard from '@/components/cards/project';
+import Footer from '@/components/Footer';
+import Header from '@/components/Header';
+import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+export default async function Home() {
+    return (
+        <main className="min-h-screen bg-[#0a192f] font-mono text-gray-300">
+            <div className="container mx-auto">
+                <div id="wrapper" className="flex flex-col lg:flex-row">
+                    {/* Left Section (Sticky) */}
+                    <Header />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+                    {/* Right Section */}
+                    <div className="space-y-20 p-8 lg:ml-[40%] lg:w-[60%] lg:p-16">
+                        {/* About Section */}
+                        <section id="about" className="space-y-6 px-4">
+                            <h2 className="font-sans text-2xl font-bold text-gray-100">About Me</h2>
+                            <div className="space-y-4">
+                                <p>
+                                    I'm a full-stack developer who loves building smooth,
+                                    high-performance user experiences — from sleek interfaces to
+                                    powerful backend systems. I enjoy merging creative design with
+                                    solid engineering, making sure everything not only looks clean
+                                    but works flawlessly under the hood.
+                                </p>
+                                <p>
+                                    Right now, I'm focused on crafting modern web tools,
+                                    game-related platforms, and automation systems that save time
+                                    and effort — whether it's for Minecraft servers, RP communities,
+                                    or public APIs. I care deeply about clean architecture,
+                                    maintainability, and developer-first workflows.
+                                </p>
+                                <p>
+                                    Over the years, I've worked on a variety of projects — solo and
+                                    in teams — across gaming networks, Discord bots, complex
+                                    roleplay frameworks, and full-stack web platforms. Whether I'm
+                                    designing a beautiful UI, scripting server logic, or automating
+                                    deployments, I aim to bring clarity and structure to everything
+                                    I build.
+                                </p>
+                                <p>
+                                    Outside of coding, you'll find me brainstorming future projects,
+                                    designing systems, or deep-diving into game mechanics and
+                                    community tools.
+                                </p>
+                            </div>
+                        </section>
+
+                        {/* Experience Section */}
+                        <section id="experience" className="space-y-6">
+                            <h2 className="px-4 font-sans text-2xl font-bold text-gray-100">
+                                Experience
+                            </h2>
+                            <div className="group space-y-0">
+                                <ExperienceCard
+                                    title="Senior Frontend Engineer, Accessibility"
+                                    company="Acme Corp"
+                                    period="2024 — PRESENT"
+                                    description="Build and maintain critical components used to construct the frontend across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility."
+                                    technologies={[
+                                        'JavaScript',
+                                        'TypeScript',
+                                        'React',
+                                        'Storybook',
+                                    ]}
+                                    links={[{ name: 'Acme Corp', url: 'https://example.com' }]}
+                                />
+
+                                <ExperienceCard
+                                    title="Lead Engineer"
+                                    company="TechStart Inc"
+                                    period="2018 — 2024"
+                                    description="Led development teams in creating responsive web applications. Architected frontend solutions and implemented design systems for consistent user experiences across multiple products."
+                                    technologies={['React', 'Next.js', 'Node.js', 'GraphQL']}
+                                    links={[{ name: 'TechStart', url: 'https://example.com' }]}
+                                />
+
+                                <ExperienceCard
+                                    title="UI Engineer Co-op"
+                                    company="Apple"
+                                    period="JULY — DEC 2017"
+                                    description="Developed and styled interactive web apps for Apple Music, including the user interface of Apple Music's embeddable web player widget for in-browser user authorization and full song playback."
+                                    technologies={['JavaScript', 'SCSS', 'Ember', 'MusicKit.js']}
+                                    links={[
+                                        { name: 'MusicKit.js', url: 'https://example.com' },
+                                        { name: '9to5Mac', url: 'https://example.com' },
+                                        { name: 'The Verge', url: 'https://example.com' },
+                                    ]}
+                                />
+
+                                <ExperienceCard
+                                    title="Developer"
+                                    company="Scout Studio"
+                                    period="2016 — 2017"
+                                    description="Collaborated with other student designers and engineers on pro-bono projects to create new brands, design systems, and websites for organizations."
+                                    technologies={['JavaScript', 'HTML', 'CSS', 'jQuery']}
+                                    links={[]}
+                                />
+                            </div>
+                        </section>
+
+                        {/* Projects Section */}
+                        <section id="projects" className="space-y-6">
+                            <h2 className="px-4 font-sans text-2xl font-bold text-gray-100">
+                                Projects
+                            </h2>
+                            <div className="group space-y-8">
+                                <ProjectCard
+                                    title="Build a Spotify Connected App"
+                                    description="Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more."
+                                    image=""
+                                    technologies={['React', 'Express', 'Spotify API', 'Heroku']}
+                                    link="https://example.com/project1"
+                                />
+
+                                <ProjectCard
+                                    title="Spotify Profile"
+                                    description="Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
+                                    image=""
+                                    technologies={['React', 'Express', 'Spotify API', 'Heroku']}
+                                    link="https://example.com/project2"
+                                    stars={680}
+                                />
+
+                                <ProjectCard
+                                    title="Halcyon Theme"
+                                    description="Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more."
+                                    image=""
+                                    technologies={['VS Code', 'Sublime Text', 'Atom', 'iTerm']}
+                                    link="https://example.com/project3"
+                                    installs="100k+"
+                                />
+
+                                <ProjectCard
+                                    title="Portfolio v4"
+                                    description="An old portfolio site built with Gatsby with 6k+ stars and 3k+ forks"
+                                    image=""
+                                    technologies={['Gatsby', 'Styled Components', 'Netlify']}
+                                    link="https://example.com/project4"
+                                    stars={7870}
+                                />
+                            </div>
+                        </section>
+
+                        <Footer />
+                    </div>
+                </div>
+            </div>
+        </main>
+    );
 }
