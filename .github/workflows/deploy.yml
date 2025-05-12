@@ -3,34 +3,41 @@ name: Deploy to GitHub Pages
 on:
     push:
         branches:
-            - main # Or your default branch
+            - main
 
 jobs:
-    deploy:
+    build-and-deploy:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout Code
+            - name: Checkout repo
               uses: actions/checkout@v4
 
             - name: Setup Node.js
               uses: actions/setup-node@v4
               with:
-                  node-version: '18'
+                  node-version: 18
                   cache: 'pnpm'
 
             - name: Install pnpm
-              run: npm install -g pnpm
+              run: |
+                  corepack enable
+                  corepack prepare pnpm@latest --activate
 
-            - name: Install Dependencies
+            - name: Install dependencies
               run: pnpm install
 
-            - name: Build and Export Static Site
-              run: pnpm build
+            - name: Build and export Next.js
+              run: pnpm build && pnpm export
+
+            - name: Copy V1 site
+              run: |
+                  mkdir final-dist
+                  cp -r out/* final-dist/
+                  cp -r v1 final-dist/v1
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }}
-                  publish_dir: ./out
-                  publish_branch: gh-pages
+                  publish_dir: ./final-dist
