@@ -30,7 +30,7 @@ export default function ProjectCard({
 
     return (
         <div
-            className="group relative border-b border-gray-800 pb-8"
+            className="group/list relative border-b border-gray-800 pb-8"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -45,8 +45,9 @@ export default function ProjectCard({
                     <Image
                         src={image || 'https://placehold.co/100'}
                         alt={title}
-                        fill
-                        className="object-cover transition-transform duration-500"
+                        width={200}
+                        height={48}
+                        className="aspect-video rounded border-2 border-slate-200/10 object-cover transition group-hover:border-slate-200/30"
                     />
                 </div>
 
@@ -57,7 +58,7 @@ export default function ProjectCard({
                             href={link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-teal-400 transition-colors hover:text-teal-300"
+                            className="group/list text-teal-400 transition-colors hover:text-teal-300"
                         >
                             <ExternalLink size={16} />
                         </a>

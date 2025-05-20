@@ -14,8 +14,8 @@ interface ExperienceCardProps {
     company: string;
     period: string;
     description: string;
-    technologies: string[];
     links: Link[];
+    url: string;
 }
 
 export default function ExperienceCard({
@@ -23,14 +23,14 @@ export default function ExperienceCard({
     company,
     period,
     description,
-    technologies,
     links,
+    url,
 }: ExperienceCardProps) {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
         <div
-            className="group relative"
+            className="group/list relative"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -42,31 +42,19 @@ export default function ExperienceCard({
                 )}
             >
                 {/* Left side - Timeline */}
-                <div className="font-mono text-sm text-gray-400">{period}</div>
+                <div className="font-mono text-sm text-gray-400 uppercase">{period}</div>
 
                 {/* Right side - Content */}
                 <div className={`transition-opacity duration-300`}>
-                    <div className="mb-2 flex items-center gap-1">
-                        <h3 className="font-sans text-xl font-bold text-gray-100">
-                            {title} · {company}
+                    <div className="mb-2 flex items-center gap-2">
+                        <h3 className="font-sans text-xl font-bold text-gray-100 group-hover:text-teal-400">
+                            <a href={url} className="group/link">
+                                {title} · {company}
+                            </a>
                         </h3>
-                        <a href="#" className="text-teal-400 transition-colors hover:text-teal-300">
-                            <ExternalLink size={16} />
-                        </a>
                     </div>
 
                     <p className="mb-4 text-gray-300">{description}</p>
-
-                    <div className="mb-3 flex flex-wrap gap-2">
-                        {technologies.map(tech => (
-                            <span
-                                key={tech}
-                                className="rounded bg-teal-400/10 px-2 py-1 text-xs text-teal-300"
-                            >
-                                {tech}
-                            </span>
-                        ))}
-                    </div>
 
                     {links.length > 0 && (
                         <div className="flex flex-wrap gap-3">
@@ -91,26 +79,14 @@ export default function ExperienceCard({
                 <div className="mb-2 font-mono text-sm text-gray-400">{period}</div>
 
                 <div className="mb-2 flex items-center gap-1">
-                    <h3 className="font-sans text-xl font-bold text-gray-100">
-                        {title} · {company}
+                    <h3 className="font-sans text-xl font-bold text-gray-100 group-hover:text-teal-400">
+                        <a href={url}>
+                            {title} · {company}
+                        </a>
                     </h3>
-                    <a href="#" className="text-teal-400 transition-colors hover:text-teal-300">
-                        <ExternalLink size={16} />
-                    </a>
                 </div>
 
                 <p className="mb-4 text-gray-300">{description}</p>
-
-                <div className="mb-3 flex flex-wrap gap-2">
-                    {technologies.map(tech => (
-                        <span
-                            key={tech}
-                            className="rounded bg-teal-400/10 px-2 py-1 text-xs text-teal-300"
-                        >
-                            {tech}
-                        </span>
-                    ))}
-                </div>
 
                 {links.length > 0 && (
                     <div className="flex flex-wrap gap-3">

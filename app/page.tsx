@@ -2,8 +2,8 @@ import ExperienceCard from '@/components/cards/experience';
 import ProjectCard from '@/components/cards/project';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
-import { ExternalLink } from 'lucide-react';
-import Link from 'next/link';
+import { experience } from '@/content/experience';
+import { projects } from '@/content/projects';
 
 export default async function Home() {
     return (
@@ -55,50 +55,20 @@ export default async function Home() {
                                 Experience
                             </h2>
                             <div className="group space-y-0">
-                                <ExperienceCard
-                                    title="Senior Frontend Engineer, Accessibility"
-                                    company="Acme Corp"
-                                    period="2024 — PRESENT"
-                                    description="Build and maintain critical components used to construct the frontend across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility."
-                                    technologies={[
-                                        'JavaScript',
-                                        'TypeScript',
-                                        'React',
-                                        'Storybook',
-                                    ]}
-                                    links={[{ name: 'Acme Corp', url: 'https://example.com' }]}
-                                />
-
-                                <ExperienceCard
-                                    title="Lead Engineer"
-                                    company="TechStart Inc"
-                                    period="2018 — 2024"
-                                    description="Led development teams in creating responsive web applications. Architected frontend solutions and implemented design systems for consistent user experiences across multiple products."
-                                    technologies={['React', 'Next.js', 'Node.js', 'GraphQL']}
-                                    links={[{ name: 'TechStart', url: 'https://example.com' }]}
-                                />
-
-                                <ExperienceCard
-                                    title="UI Engineer Co-op"
-                                    company="Apple"
-                                    period="JULY — DEC 2017"
-                                    description="Developed and styled interactive web apps for Apple Music, including the user interface of Apple Music's embeddable web player widget for in-browser user authorization and full song playback."
-                                    technologies={['JavaScript', 'SCSS', 'Ember', 'MusicKit.js']}
-                                    links={[
-                                        { name: 'MusicKit.js', url: 'https://example.com' },
-                                        { name: '9to5Mac', url: 'https://example.com' },
-                                        { name: 'The Verge', url: 'https://example.com' },
-                                    ]}
-                                />
-
-                                <ExperienceCard
-                                    title="Developer"
-                                    company="Scout Studio"
-                                    period="2016 — 2017"
-                                    description="Collaborated with other student designers and engineers on pro-bono projects to create new brands, design systems, and websites for organizations."
-                                    technologies={['JavaScript', 'HTML', 'CSS', 'jQuery']}
-                                    links={[]}
-                                />
+                                {experience.map(exp => {
+                                    return (
+                                        <ExperienceCard
+                                            key={exp.company}
+                                            title={exp.title}
+                                            company={exp.company}
+                                            period={exp.period}
+                                            description={exp.description}
+                                            // technologies={['JavaScript', 'TypeScript', 'React']}
+                                            links={exp.links}
+                                            url={exp.url}
+                                        />
+                                    );
+                                })}
                             </div>
                         </section>
 
@@ -108,40 +78,20 @@ export default async function Home() {
                                 Projects
                             </h2>
                             <div className="group space-y-8">
-                                <ProjectCard
-                                    title="Build a Spotify Connected App"
-                                    description="Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more."
-                                    image=""
-                                    technologies={['React', 'Express', 'Spotify API', 'Heroku']}
-                                    link="https://example.com/project1"
-                                />
-
-                                <ProjectCard
-                                    title="Spotify Profile"
-                                    description="Web app for visualizing personalized Spotify data. View your top artists, top tracks, recently played tracks, and detailed audio information about each track. Create and save new playlists of recommended tracks based on your existing playlists and more."
-                                    image=""
-                                    technologies={['React', 'Express', 'Spotify API', 'Heroku']}
-                                    link="https://example.com/project2"
-                                    stars={680}
-                                />
-
-                                <ProjectCard
-                                    title="Halcyon Theme"
-                                    description="Minimal dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more."
-                                    image=""
-                                    technologies={['VS Code', 'Sublime Text', 'Atom', 'iTerm']}
-                                    link="https://example.com/project3"
-                                    installs="100k+"
-                                />
-
-                                <ProjectCard
-                                    title="Portfolio v4"
-                                    description="An old portfolio site built with Gatsby with 6k+ stars and 3k+ forks"
-                                    image=""
-                                    technologies={['Gatsby', 'Styled Components', 'Netlify']}
-                                    link="https://example.com/project4"
-                                    stars={7870}
-                                />
+                                {projects.map(project => {
+                                    return (
+                                        <ProjectCard
+                                            key={project.title}
+                                            title={project.title}
+                                            description={project.description}
+                                            image={project.image}
+                                            link={project.link}
+                                            technologies={project.technologies}
+                                            installs={project.installs}
+                                            stars={project.stars}
+                                        />
+                                    );
+                                })}
                             </div>
                         </section>
 

@@ -19,7 +19,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" className="scroll-smooth" suppressHydrationWarning>
-            <body className={`${inter.className} relative antialiased`}>
+            <body className={`${inter.className} relative antialiased`} suppressHydrationWarning>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
