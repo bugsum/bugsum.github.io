@@ -42,7 +42,7 @@ const Header = () => {
                     </div>
 
                     <p className="text-lg">
-                        I build accessible, pixel-perfect digital experiences for the web.
+                        I build pixel-perfect web designs, hunt bugs, play games and help people.
                     </p>
 
                     <Button asChild variant={'ghost'}>
@@ -65,7 +65,7 @@ const Header = () => {
                 <div className="flex flex-col gap-4 pt-8">
                     <div className="flex items-center gap-4">
                         <a
-                            href="https://github.com"
+                            href="https://github.com/bugsum"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer text-gray-400 transition-colors hover:text-teal-400"
@@ -73,7 +73,7 @@ const Header = () => {
                             <Github size={26} />
                         </a>
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/samarth-sharma-111923286/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer text-gray-400 transition-colors hover:text-teal-400"
@@ -81,7 +81,7 @@ const Header = () => {
                             <Linkedin size={26} />
                         </a>
                         <a
-                            href="https://twitter.com"
+                            href="https://x.com/Samarth1098"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer text-gray-400 transition-colors hover:text-teal-400"
@@ -89,7 +89,7 @@ const Header = () => {
                             <Twitter size={26} />
                         </a>
                         <a
-                            href="https://instagram.com"
+                            href="https://www.instagram.com/samarthsharma9377/"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="cursor-pointer text-gray-400 transition-colors hover:text-teal-400"
