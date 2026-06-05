@@ -1,0 +1,68 @@
+export const metadata = {
+  title: "Designing for Perceived Performance",
+  description:
+    "Real speed matters, but how fast software feels is a design decision. A field guide to the techniques that make interfaces feel instant.",
+  date: "2024-11-18",
+  tags: ["Performance", "Design", "Frontend"],
+  featured: true,
+  author: "Samarth Sharma",
+};
+
+Users don't experience milliseconds — they experience moments. A page that loads in 800ms but blocks on a spinner can feel slower than one that takes 1.2s but reveals content progressively. Perceived performance is the art of designing those moments.
+
+## Why perception beats raw numbers
+
+We tend to optimize what we can measure: time to first byte, largest contentful paint, total blocking time. These matter. But the human nervous system doesn't read your dashboards. It responds to **feedback, motion, and momentum**.
+
+> The fastest interface is the one that never makes you wait alone.
+
+When something acknowledges your action within ~100ms, it feels instantaneous. Between 100ms and 1s, you stay in flow but notice the delay. Past a second, attention drifts.
+
+## Three techniques that compound
+
+### Optimistic updates
+
+Don't wait for the server to confirm what you already know will succeed. Render the result immediately and reconcile later.
+
+```tsx
+function useToggleLike(postId: string) {
+  const [liked, setLiked] = useState(false);
+
+  async function toggle() {
+    setLiked((prev) => !prev); // optimistic
+    try {
+      await api.like(postId);
+    } catch {
+      setLiked((prev) => !prev); // rollback on failure
+    }
+  }
+
+  return { liked, toggle };
+}
+```
+
+The interaction feels free because, for the user, it _is_ free.
+
+### Skeletons over spinners
+
+A spinner says "something is happening." A skeleton says "here's what's coming." The second sets expectations and reduces the perceived wait by giving the eye structure to anticipate.
+
+- Match the skeleton to the real layout
+- Animate it subtly — a slow shimmer, never a flash
+- Bail out fast: if data arrives in under 200ms, skip the skeleton entirely
+
+### Motion as continuity
+
+Transitions aren't decoration — they preserve context. When an element moves from a list into a detail view, the user's mental model travels with it. Abrupt swaps force the brain to re-orient.
+
+## A quick comparison
+
+| Approach        | Perceived speed | Effort  |
+| --------------- | --------------- | ------- |
+| Spinner         | Low             | Trivial |
+| Skeleton        | Medium          | Low     |
+| Optimistic + motion | High        | Medium  |
+
+## Where to start
+
+Pick your single most-used interaction and make it feel instant. One great moment teaches users to trust the whole product — and that trust is the real performance win.

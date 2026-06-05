@@ -1,26 +1,242 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ------------------------------------------------------------------ *
+ *  Design System — Apple × Linear × Vercel
+ *  Dark-first, restrained, typographic, premium.
+ * ------------------------------------------------------------------ */
+
+@theme {
+  /* Surfaces — near-black with subtle cool depth */
+  --color-canvas: oklch(14.5% 0.004 285);
+  --color-surface: oklch(17.5% 0.005 285);
+  --color-surface-2: oklch(21% 0.006 285);
+  --color-elevated: oklch(24% 0.007 285);
+
+  /* Text */
+  --color-ink: oklch(98% 0.003 285);
+  --color-ink-soft: oklch(78% 0.006 285);
+  --color-ink-muted: oklch(60% 0.008 285);
+  --color-ink-faint: oklch(46% 0.008 285);
+
+  /* Borders / hairlines */
+  --color-line: oklch(100% 0 0 / 0.07);
+  --color-line-strong: oklch(100% 0 0 / 0.12);
+
+  /* Accent — a restrained iris/indigo */
+  --color-accent: oklch(67% 0.16 274);
+  --color-accent-soft: oklch(72% 0.13 274);
+  --color-accent-ink: oklch(96% 0.02 274);
+
+  /* Radii */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  /* Easing + timing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  /* Container */
+  --spacing-gutter: 1.5rem;
+
+  /* Typographic scale for fluid headings */
+  --text-display: clamp(2.75rem, 1.8rem + 4.2vw, 5.25rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.035em;
+
+  --text-h1: clamp(2.25rem, 1.6rem + 2.6vw, 3.5rem);
+  --text-h1--line-height: 1.04;
+  --text-h1--letter-spacing: -0.03em;
+
+  --text-h2: clamp(1.75rem, 1.4rem + 1.4vw, 2.5rem);
+  --text-h2--line-height: 1.1;
+  --text-h2--letter-spacing: -0.025em;
+
+  --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.6rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.02em;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+/* ------------------------------------------------------------------ *
+ *  Base
+ * ------------------------------------------------------------------ */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01", "cv03";
+  }
+
+  ::selection {
+    background-color: oklch(67% 0.16 274 / 0.3);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-soft);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(100% 0 0 / 0.08);
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(100% 0 0 / 0.16);
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ------------------------------------------------------------------ *
+ *  Utilities & components
+ * ------------------------------------------------------------------ */
+
+@layer utilities {
+  /* Glass panel */
+  .glass {
+    background: oklch(100% 0 0 / 0.025);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+  }
+
+  /* Subtle top-edge highlight used on premium cards */
+  .edge-highlight {
+    position: relative;
+  }
+  .edge-highlight::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      180deg,
+      oklch(100% 0 0 / 0.14),
+      oklch(100% 0 0 / 0) 40%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* Text gradient for emphasis.
+   * Use `background-image` (not the `background` shorthand): Lightning CSS
+   * emits an oklch→lab fallback inside `@supports`, and the shorthand would
+   * reset `background-clip` back to `border-box`, breaking the text clip. */
+  .text-shine {
+    background-image: linear-gradient(
+      180deg,
+      var(--color-ink) 30%,
+      oklch(70% 0.006 285)
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  /* Hairline grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--color-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-line) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+
+  /* Radial fade mask helper */
+  .mask-radial-faded {
+    -webkit-mask-image: radial-gradient(
+      ellipse at center,
+      #000 0%,
+      transparent 75%
+    );
+    mask-image: radial-gradient(ellipse at center, #000 0%, transparent 75%);
+  }
+
+  .mask-b-faded {
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  }
+}
+
+/* Print — optimized for saving the resume as a PDF */
+@media print {
+  html,
+  body {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  header,
+  footer,
+  .print\:hidden {
+    display: none !important;
+  }
+  /* Hide the fixed ambient background layer */
+  body > div[aria-hidden] {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+  .resume-sheet {
+    box-shadow: none !important;
+  }
+  @page {
+    margin: 16mm;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }

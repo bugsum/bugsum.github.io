@@ -1,0 +1,59 @@
+export const metadata = {
+  title: "Type Safety, End to End",
+  description:
+    "How to make invalid states unrepresentable across the wire — from the database row to the rendered pixel — without drowning in boilerplate.",
+  date: "2024-10-05",
+  tags: ["TypeScript", "Architecture", "Backend"],
+  author: "Samarth Sharma",
+};
+
+The promise of TypeScript isn't fewer bugs at the keyword level — it's a system where the compiler refuses to let you build something incoherent. The trick is extending that guarantee past the boundaries of a single file.
+
+## The boundary problem
+
+Most type errors hide at the seams: the API response that "should" match your interface, the form payload that drifts from the schema, the database column someone renamed last quarter. TypeScript can't see across a network call unless you make it.
+
+## Schemas as the single source of truth
+
+Define your shapes once, then derive everything else.
+
+```ts
+import { z } from "zod";
+
+export const User = z.object({
+  id: z.string().uuid(),
+  email: z.string().email(),
+  role: z.enum(["admin", "member"]),
+});
+
+export type User = z.infer<typeof User>;
+```
+
+Now the same definition validates input at runtime _and_ produces a static type. There is no second place to update.
+
+### Parse, don't validate
+
+A validator returns a boolean and leaves you holding `unknown`. A parser returns a typed value or throws. Prefer parsing — it narrows the type as a side effect.
+
+```ts
+function handler(raw: unknown) {
+  const user = User.parse(raw); // user is now `User`
+  return user.email; // fully typed
+}
+```
+
+## Closing the last mile
+
+The frontend is where types usually go to die. Tools like tRPC or generated GraphQL clients let the server export its contract and the client import it — no codegen drift, no hand-written fetch wrappers.
+
+- The server owns the schema
+- The client infers the types
+- A rename breaks the build, not production
+
+## What you actually gain
+
+1. Refactors become mechanical — follow the red squiggles
+2. Onboarding speeds up — the types _are_ the docs
+3. Whole categories of bug simply stop existing
+
+Type safety isn't about ceremony. It's about pushing the cost of mistakes left, to the cheapest possible moment: the second you type them.
