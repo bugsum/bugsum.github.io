@@ -34,38 +34,38 @@ export const resume: Resume = {
   pdfPath: "/resume.pdf",
   education: [
     {
-      institution: "University of Technology",
-      credential: "B.S. in Computer Science",
-      period: "2015 — 2019",
+      institution: "GNSPSC, Indore",
+      credential: "BCA in Computer Applications",
+      period: "2023 - 2026",
       detail: "Focus on distributed systems and human–computer interaction.",
     },
   ],
   certifications: [
-    {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      year: "2023",
-    },
-    {
-      name: "Professional Scrum Developer",
-      issuer: "Scrum.org",
-      year: "2022",
-    },
+    // {
+    //   name: "AWS Certified Solutions Architect",
+    //   issuer: "Amazon Web Services",
+    //   year: "2023",
+    // },
+    // {
+    //   name: "Professional Scrum Developer",
+    //   issuer: "Scrum.org",
+    //   year: "2022",
+    // },
   ],
   achievements: [
-    {
-      title: "Speaker — Frontend Summit",
-      detail: "Talk on perceived performance and motion design at scale.",
-      year: "2024",
-    },
-    {
-      title: "Open-source maintainer",
-      detail: "2k+ GitHub stars across personal projects and libraries.",
-    },
-    {
-      title: "Internal Engineering Award",
-      detail: "Recognized for the platform rebuild that improved TTI by 48%.",
-      year: "2023",
-    },
+    // {
+    //   title: "Speaker — Frontend Summit",
+    //   detail: "Talk on perceived performance and motion design at scale.",
+    //   year: "2024",
+    // },
+    // {
+    //   title: "Open-source maintainer",
+    //   detail: "2k+ GitHub stars across personal projects and libraries.",
+    // },
+    // {
+    //   title: "Internal Engineering Award",
+    //   detail: "Recognized for the platform rebuild that improved TTI by 48%.",
+    //   year: "2023",
+    // },
   ],
 };

@@ -21,7 +21,7 @@ export const seo: SeoConfig = {
   titleTemplate: `%s · ${personal.name}`,
   description: personal.intro,
   url: personal.url,
-  ogImage: "/opengraph-image",
+  ogImage: "/samarth.png",
   twitterHandle: "@samarthsharma",
   keywords: [
     personal.name,

@@ -17,7 +17,7 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           padding: "80px",
           background:
-            "radial-gradient(900px 500px at 15% -10%, rgba(124,108,240,0.28), transparent), #0a0a0b",
+            "radial-gradient(900px 500px at 15% -10%, rgba(160,86,232,0.30), transparent), #0a0a0b",
           color: "#fafafa",
           fontFamily: "sans-serif",
         }}
@@ -58,7 +58,7 @@ export default function OpengraphImage() {
           <div
             style={{
               fontSize: 36,
-              color: "#a78bfa",
+              color: "#c084fc",
               fontWeight: 500,
             }}
           >

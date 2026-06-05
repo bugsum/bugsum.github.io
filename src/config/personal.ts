@@ -33,19 +33,20 @@ export interface Personal {
 
 export const personal: Personal = {
   name: "Samarth Sharma",
-  initials: "SS",
+  initials: "Sam",
   logo: "/samarth.jpg",
-  title: "Software Engineer",
+  title: "Full-Stack Developer",
   roles: [
     "Software Engineer",
     "Full-Stack Developer",
     "Product-minded Builder",
+    "Open Source Contributor",
     "Systems Thinker",
   ],
   location: "India",
   availability: "Open to opportunities",
   available: true,
-  tagline: "I build fast, considered software for the web.",
+  tagline: "I build fast, considered software for the community.",
   intro:
     "I design and engineer products end-to-end — from the data model to the last pixel — with a bias for clarity, performance, and craft.",
   about: {

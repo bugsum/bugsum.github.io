@@ -2,8 +2,8 @@ import { NextResponse } from "next/server";
 import { validateContact, type ContactInput } from "@/lib/contact-schema";
 import { personal } from "@/config/personal";
 
-/** Discord embed accent — matches the site accent (iris). */
-const EMBED_COLOR = 0x7c6cf0;
+/** Discord embed accent — matches the site accent (purple). */
+const EMBED_COLOR = 0xa056e8;
 
 export async function POST(request: Request) {
   let body: Partial<ContactInput>;

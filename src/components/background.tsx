@@ -16,16 +16,16 @@ export function Background() {
         className="absolute left-1/2 top-[-20%] h-[60vh] w-[80vw] -translate-x-1/2 rounded-full opacity-60 blur-[120px]"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(67% 0.16 274 / 0.16), transparent)",
+            "radial-gradient(closest-side, oklch(64% 0.18 302 / 0.17), transparent)",
         }}
       />
 
-      {/* Faint cool glow, lower right */}
+      {/* Faint magenta-purple glow, lower right — harmonizes with the accent */}
       <div
         className="absolute bottom-[-10%] right-[-10%] h-[50vh] w-[50vw] rounded-full opacity-40 blur-[120px]"
         style={{
           background:
-            "radial-gradient(closest-side, oklch(70% 0.1 220 / 0.12), transparent)",
+            "radial-gradient(closest-side, oklch(68% 0.12 326 / 0.12), transparent)",
         }}
       />
 

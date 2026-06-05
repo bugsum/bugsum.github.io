@@ -19,7 +19,7 @@ export function Hero() {
           className="absolute left-1/2 -top-32 h-112 w-2xl -translate-x-1/2 rounded-full opacity-50 blur-[110px]"
           style={{
             background:
-              "radial-gradient(closest-side, oklch(67% 0.16 274 / 0.28), transparent)",
+              "radial-gradient(closest-side, oklch(64% 0.18 302 / 0.3), transparent)",
           }}
         />
       </div>

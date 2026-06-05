@@ -22,10 +22,10 @@
   --color-line: oklch(100% 0 0 / 0.07);
   --color-line-strong: oklch(100% 0 0 / 0.12);
 
-  /* Accent — a restrained iris/indigo */
-  --color-accent: oklch(67% 0.16 274);
-  --color-accent-soft: oklch(72% 0.13 274);
-  --color-accent-ink: oklch(96% 0.02 274);
+  /* Accent — a restrained purple */
+  --color-accent: oklch(64% 0.19 302);
+  --color-accent-soft: oklch(72% 0.15 302);
+  --color-accent-ink: oklch(95% 0.035 302);
 
   /* Radii */
   --radius-xs: 0.375rem;
@@ -89,7 +89,7 @@
   }
 
   ::selection {
-    background-color: oklch(67% 0.16 274 / 0.3);
+    background-color: oklch(64% 0.19 302 / 0.32);
     color: var(--color-ink);
   }
 

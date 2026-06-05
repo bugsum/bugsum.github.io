@@ -20,7 +20,7 @@ export function ContactCTA() {
               className="absolute left-1/2 top-1/2 h-96 w-160 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60 blur-[100px]"
               style={{
                 background:
-                  "radial-gradient(closest-side, oklch(67% 0.16 274 / 0.22), transparent)",
+                  "radial-gradient(closest-side, oklch(64% 0.18 302 / 0.24), transparent)",
               }}
             />
             <div className="absolute inset-0 bg-grid opacity-30 mask-radial-faded" />

@@ -17,40 +17,58 @@ export interface ExperienceItem {
 
 export const experience: ExperienceItem[] = [
   {
-    role: "Senior Software Engineer",
-    company: "Vantage Labs",
-    companyUrl: "https://example.com",
-    period: "2023 — Present",
+    role: "CEO",
+    company: "Elightnodes",
+    // companyUrl: "https://example.com",
+    period: "2024 — 2025",
     location: "Remote",
-    current: true,
+    current: false,
     highlights: [
-      "Led the rebuild of the core product surface, cutting time-to-interactive by 48%.",
-      "Architected a type-safe API layer adopted across four teams.",
-      "Mentored engineers and established the frontend design-engineering practice.",
+      // elightnodes was a cloud hosting company for vps, dedi servers, minecraft hosting i was hired as a cfo first and then ceo
+      "Led the company through a successful acquisition by a larger hosting provider.",
+      "Doubled revenue within the first year by expanding into new markets and optimizing pricing strategies.",
+      "Implemented a customer retention program that increased repeat business by 40%.",
     ],
-    stack: ["Next.js", "TypeScript", "tRPC", "PostgreSQL"],
+    stack: [
+      "Cloud Hosting",
+      "Customer Acquisition",
+      "Revenue Growth",
+      "Team Leadership",
+    ],
   },
   {
-    role: "Software Engineer",
-    company: "Northwind",
-    companyUrl: "https://example.com",
-    period: "2021 — 2023",
+    role: "Director",
+    company: "Avlanc Cloud",
+    // companyUrl: "https://example.com",
+    period: "2025 — 2025",
+    location: "Remote",
+    highlights: [
+      // we had transformed from elightnodes to avlanc cloud and i had become the founder but the services were same.
+      "Spearheaded the rebranding and strategic pivot to Avlanc Cloud, resulting in a 150% increase in brand recognition.",
+      "Expanded service offerings to include managed cloud solutions, leading to a 60% increase in client acquisition.",
+    ],
+    stack: [
+      "Cloud Solutions",
+      "Brand Strategy",
+      "Market Expansion",
+      "Leadership",
+    ],
+  },
+  {
+    role: "Founder",
+    company: "Bug Labs",
+    period: "2023 — Present",
     location: "Hybrid",
     highlights: [
-      "Shipped the customer-facing dashboard from zero to 30k MAU.",
-      "Introduced an end-to-end testing pipeline that cut regressions by 60%.",
+      // basically a simple startup which i created to professionally freelance along with maybe adding a team in future
+      "Founded Bug Labs, a boutique software consultancy specializing in web/app development and UI/UX design.",
+      "Secured contracts with 10+ clients across various industries, delivering high-quality digital solutions.",
     ],
-    stack: ["React", "Node.js", "GraphQL", "AWS"],
-  },
-  {
-    role: "Frontend Engineer",
-    company: "Pixelworks Studio",
-    period: "2019 — 2021",
-    location: "On-site",
-    highlights: [
-      "Built award-winning marketing experiences for global brands.",
-      "Owned the motion and interaction system used across client work.",
+    stack: [
+      "Web Development",
+      "App Development",
+      "UI/UX Design",
+      "Client Relations",
     ],
-    stack: ["TypeScript", "React", "GSAP", "WebGL"],
   },
 ];
