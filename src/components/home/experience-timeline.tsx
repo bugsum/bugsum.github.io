@@ -25,12 +25,12 @@ export function ExperienceTimeline() {
                 <span
                   className={`relative z-10 mt-1.5 flex size-3 items-center justify-center rounded-full border ${
                     item.current
-                      ? "border-accent-soft bg-[color:var(--color-accent)]"
+                      ? "border-accent-soft bg-accent"
                       : "border-line-strong bg-surface-2"
                   }`}
                 >
                   {item.current && (
-                    <span className="absolute inline-flex size-3 animate-ping rounded-full bg-[color:var(--color-accent)] opacity-60" />
+                    <span className="absolute inline-flex size-3 animate-ping rounded-full bg-accent opacity-60" />
                   )}
                 </span>
                 <span className="mt-2 w-px flex-1 bg-line group-last:hidden" aria-hidden />

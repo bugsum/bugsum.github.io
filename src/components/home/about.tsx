@@ -34,7 +34,7 @@ export function About() {
           <ul className="mt-5 flex flex-col gap-4">
             {personal.about.focus.map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-[color:var(--color-accent)]/30 bg-[color:var(--color-accent)]/10">
+                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-accent/10">
                   <CheckIcon className="size-3 text-accent-soft" />
                 </span>
                 <span className="text-[0.95rem] leading-relaxed text-ink-soft">

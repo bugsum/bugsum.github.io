@@ -17,7 +17,7 @@ export function BlogCard({
     <Link
       href={`/blog/${post.slug}`}
       className={cn(
-        "group relative flex flex-col justify-between gap-6 rounded-2xl border border-line bg-surface/30 p-6 transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1 hover:border-line-strong hover:bg-surface/70 sm:p-7",
+        "group relative flex flex-col justify-between gap-6 rounded-2xl border border-line bg-surface/30 p-6 transition-all duration-500 ease-out-expo hover:-translate-y-1 hover:border-line-strong hover:bg-surface/70 sm:p-7",
         featured && "sm:p-9",
         className,
       )}
@@ -62,7 +62,7 @@ export function BlogCard({
             <Badge key={tag}>{tag}</Badge>
           ))}
         </div>
-        <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-line text-ink-muted transition-all duration-300 group-hover:border-line-strong group-hover:bg-white/[0.06] group-hover:text-ink">
+        <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-line text-ink-muted transition-all duration-300 group-hover:border-line-strong group-hover:bg-white/6 group-hover:text-ink">
           <ArrowUpRightIcon className="size-4 transition-transform duration-300 group-hover:-translate-y-px group-hover:translate-x-px" />
         </span>
       </div>

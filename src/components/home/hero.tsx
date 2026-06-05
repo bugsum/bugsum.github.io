@@ -13,10 +13,10 @@ export function Hero() {
       {/* Local hero glow */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 top-0 -z-0 h-[36rem] mask-b-faded"
+        className="pointer-events-none absolute inset-x-0 top-0 z-0 h-144 mask-b-faded"
       >
         <div
-          className="absolute left-1/2 top-[-8rem] h-[28rem] w-[42rem] -translate-x-1/2 rounded-full opacity-50 blur-[110px]"
+          className="absolute left-1/2 -top-32 h-112 w-2xl -translate-x-1/2 rounded-full opacity-50 blur-[110px]"
           style={{
             background:
               "radial-gradient(closest-side, oklch(67% 0.16 274 / 0.28), transparent)",

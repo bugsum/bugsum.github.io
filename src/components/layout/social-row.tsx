@@ -29,7 +29,7 @@ export function SocialRow({
               rel="noopener noreferrer"
               aria-label={social.label}
               className={cn(
-                "group flex items-center justify-center rounded-full border border-transparent text-ink-muted transition-all duration-300 ease-[var(--ease-out-expo)] hover:border-line-strong hover:bg-white/[0.05] hover:text-ink",
+                "group flex items-center justify-center rounded-full border border-transparent text-ink-muted transition-all duration-300 ease-out-expo hover:border-line-strong hover:bg-white/5 hover:text-ink",
                 dim,
               )}
             >

@@ -8,10 +8,10 @@ interface BadgeProps {
 }
 
 const variants = {
-  default: "bg-white/[0.05] text-ink-soft border border-line",
+  default: "bg-white/5 text-ink-soft border border-line",
   outline: "border border-line-strong text-ink-muted",
   accent:
-    "border border-[color:var(--color-accent)]/30 bg-[color:var(--color-accent)]/10 text-accent-ink",
+    "border border-accent/30 bg-accent/10 text-accent-ink",
 } as const;
 
 export function Badge({ children, className, variant = "default" }: BadgeProps) {

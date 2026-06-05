@@ -16,7 +16,7 @@ function CoverFallback({ title }: { title: string }) {
         }}
       />
       <div className="absolute inset-0 bg-grid opacity-[0.5] mask-radial-faded" />
-      <span className="absolute bottom-4 left-5 font-mono text-7xl font-semibold text-white/[0.06]">
+      <span className="absolute bottom-4 left-5 font-mono text-7xl font-semibold text-white/6">
         {title.slice(0, 2).toUpperCase()}
       </span>
     </div>
@@ -35,24 +35,24 @@ export function ProjectCard({
   return (
     <article
       className={cn(
-        "group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/40 transition-all duration-500 ease-[var(--ease-out-expo)] hover:-translate-y-1 hover:border-line-strong hover:bg-surface/70",
+        "group relative flex flex-col overflow-hidden rounded-2xl border border-line bg-surface/40 transition-all duration-500 ease-out-expo hover:-translate-y-1 hover:border-line-strong hover:bg-surface/70",
         className,
       )}
     >
       {/* Cover */}
-      <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-line">
+      <div className="relative aspect-16/10 w-full overflow-hidden border-b border-line">
         {project.image ? (
           <Image
             src={project.image}
             alt={`${project.title} preview`}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:scale-[1.03]"
+            className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-[1.03]"
           />
         ) : (
           <CoverFallback title={project.title} />
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-canvas/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+        <div className="absolute inset-0 bg-linear-to-t from-canvas/60 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
       </div>
 
       {/* Body */}
@@ -98,7 +98,7 @@ export function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${project.title} on GitHub`}
-              className="ml-auto inline-flex size-9 items-center justify-center rounded-full text-ink-muted transition-colors hover:bg-white/[0.06] hover:text-ink"
+              className="ml-auto inline-flex size-9 items-center justify-center rounded-full text-ink-muted transition-colors hover:bg-white/6 hover:text-ink"
             >
               <GitHubIcon className="size-[1.1rem]" />
             </a>

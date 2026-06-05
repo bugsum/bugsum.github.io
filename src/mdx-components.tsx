@@ -104,7 +104,7 @@ const components: MDXComponents = {
   ),
   blockquote: (props) => (
     <blockquote
-      className="my-7 border-l-2 border-[color:var(--color-accent)]/50 pl-5 text-pretty text-lg italic leading-relaxed text-ink-soft"
+      className="my-7 border-l-2 border-accent/50 pl-5 text-pretty text-lg italic leading-relaxed text-ink-soft"
       {...props}
     />
   ),
@@ -112,7 +112,7 @@ const components: MDXComponents = {
   strong: (props) => <strong className="font-semibold text-ink" {...props} />,
   code: (props: ComponentPropsWithoutRef<"code">) => (
     <code
-      className="rounded-md border border-line bg-white/[0.04] px-1.5 py-0.5 font-mono text-[0.85em] text-accent-ink"
+      className="rounded-md border border-line bg-white/4 px-1.5 py-0.5 font-mono text-[0.85em] text-accent-ink"
       {...props}
     />
   ),
@@ -136,7 +136,7 @@ const components: MDXComponents = {
   ),
   th: (props) => (
     <th
-      className="border-b border-line bg-white/[0.03] px-4 py-3 text-left font-semibold text-ink"
+      className="border-b border-line bg-white/3 px-4 py-3 text-left font-semibold text-ink"
       {...props}
     />
   ),

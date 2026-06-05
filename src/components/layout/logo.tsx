@@ -13,7 +13,7 @@ export function Logo({ className }: { className?: string }) {
         className,
       )}
     >
-      <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-lg border border-line-strong edge-highlight transition-transform duration-300 ease-[var(--ease-out-expo)] group-hover:scale-[1.05]">
+      <span className="relative flex size-8 items-center justify-center overflow-hidden rounded-lg border border-line-strong edge-highlight transition-transform duration-300 ease-out-expo group-hover:scale-[1.05]">
         <Image
           src={personal.logo}
           alt=""
@@ -25,7 +25,7 @@ export function Logo({ className }: { className?: string }) {
       </span>
       <span className="text-[0.95rem] font-medium tracking-tight text-ink">
         {personal.name.split(" ")[0]}
-        <span className="text-ink-faint">.dev</span>
+        {/* <span className="text-ink-faint">.dev</span> */}
       </span>
     </Link>
   );

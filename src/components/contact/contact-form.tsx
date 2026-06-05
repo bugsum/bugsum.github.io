@@ -78,7 +78,7 @@ export function ContactForm() {
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="flex flex-col items-center justify-center gap-5 rounded-2xl border border-line bg-surface/40 px-8 py-16 text-center edge-highlight"
       >
-        <span className="flex size-14 items-center justify-center rounded-full border border-[color:var(--color-accent)]/30 bg-[color:var(--color-accent)]/10">
+        <span className="flex size-14 items-center justify-center rounded-full border border-accent/30 bg-accent/10">
           <CheckIcon className="size-7 text-accent-soft" />
         </span>
         <div>
@@ -153,7 +153,7 @@ export function ContactForm() {
       />
 
       {/* Honeypot — hidden from humans */}
-      <div className="absolute -left-[9999px]" aria-hidden>
+      <div className="absolute left-[-9999px]" aria-hidden>
         <label>
           Website
           <input

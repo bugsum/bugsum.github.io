@@ -23,75 +23,45 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "atlas-analytics",
-    title: "Atlas Analytics",
-    description:
-      "A real-time product analytics platform with sub-second query latency over billions of events.",
+    slug: "tierpvp",
+    title: "TierPVP",
+    image: "/projects/tierpvp.png",
+    description: "A fast-paced, skill-based PvP minecraft game plugin.",
     longDescription:
-      "Built the ingestion pipeline, columnar query layer, and the entire dashboard experience. Focused relentlessly on perceived performance and a calm, legible UI.",
-    year: "2024",
-    stack: ["Next.js", "TypeScript", "ClickHouse", "tRPC", "Tailwind"],
-    github: "https://github.com/samarthsharma/atlas",
-    demo: "https://atlas.example.com",
+      "Implemented a custom server architecture to achieve sub-50ms tick times under load. Features matchmaking, leaderboards, and tier based fights.",
+    year: "2026",
+    stack: ["Java", "Paper", "MySQL"],
+    github: "https://github.com/Bug-Labs/TierPvP",
     featured: true,
     highlight: "P95 query latency under 400ms across 2B+ events",
   },
   {
-    slug: "orbit-design-system",
-    title: "Orbit Design System",
+    slug: "chunk-collector",
+    title: "Chunk Collector",
+    image: "/projects/chunk-collector.png",
     description:
-      "An accessible, themeable component library powering a suite of internal products.",
+      "A Minecraft plugin that makes hoppers more efficient by collecting items in a virtual inventory and depositing them in batches.",
     longDescription:
-      "Designed tokens, primitives, and motion guidelines. Shipped with full keyboard and screen-reader support, dark mode, and zero-runtime styling.",
-    year: "2024",
-    stack: ["React", "Radix UI", "Tailwind", "Storybook", "Motion"],
-    github: "https://github.com/samarthsharma/orbit",
-    featured: true,
-    highlight: "Adopted by 6 teams, 40% faster feature delivery",
+      "Designed a custom chunk-based inventory system to minimize disk I/O and reduce lag. Used async processing and batching to handle high throughput.",
+    year: "2026",
+    stack: ["Java", "Paper", "MySQL"],
+    github: "https://github.com/Bug-Labs/Collector",
+    featured: false,
+    highlight: "Reduced hopper lag by up to 80% in large player base servers",
   },
   {
-    slug: "ledger",
-    title: "Ledger",
+    slug: "symmetryiq",
+    title: "SymmetryIQ",
+    image: "/projects/symmetryiq.png",
     description:
-      "A privacy-first personal finance app with local-first sync and end-to-end encryption.",
+      "A looksmaxxing mobile app that uses computer vision to analyze facial symmetry and provide personalized improvement recommendations.",
     longDescription:
-      "Engineered an offline-first architecture with conflict-free sync. Everything is encrypted client-side; the server never sees plaintext.",
-    year: "2023",
-    stack: ["React Native", "SQLite", "Rust", "CRDTs"],
-    demo: "https://ledger.example.com",
+      "Built a custom facial landmark detection model using Mediapipe. Developed a React Native app with a user-friendly interface for real-time analysis and feedback.",
+    year: "2026",
+    stack: ["Android", "iOS", "React Native", "Mediapipe", "Expo"],
     featured: true,
-    highlight: "100% offline-capable, E2E encrypted",
-  },
-  {
-    slug: "pulse",
-    title: "Pulse",
-    description:
-      "An open-source uptime and status-page monitor with beautiful incident timelines.",
-    year: "2023",
-    stack: ["Go", "Next.js", "PostgreSQL", "WebSockets"],
-    github: "https://github.com/samarthsharma/pulse",
-    demo: "https://pulse.example.com",
-    featured: false,
-  },
-  {
-    slug: "quill",
-    title: "Quill",
-    description:
-      "A collaborative, block-based writing editor with real-time multiplayer cursors.",
-    year: "2022",
-    stack: ["TypeScript", "Yjs", "ProseMirror", "WebRTC"],
-    github: "https://github.com/samarthsharma/quill",
-    featured: false,
-  },
-  {
-    slug: "harbor",
-    title: "Harbor",
-    description:
-      "A self-hostable deploy platform — push to git, get a preview URL in seconds.",
-    year: "2022",
-    stack: ["Node.js", "Docker", "Kubernetes", "Terraform"],
-    github: "https://github.com/samarthsharma/harbor",
-    featured: false,
+    highlight:
+      "Achieved 95% accuracy in facial landmark detection across diverse datasets",
   },
 ];
 

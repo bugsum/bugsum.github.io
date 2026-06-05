@@ -120,7 +120,7 @@ function TagChip({
       className={cn(
         "rounded-full border px-3.5 py-1.5 text-sm font-medium transition-all duration-300",
         active
-          ? "border-line-strong bg-white/[0.08] text-ink"
+          ? "border-line-strong bg-white/8 text-ink"
           : "border-line text-ink-muted hover:border-line-strong hover:text-ink",
       )}
     >

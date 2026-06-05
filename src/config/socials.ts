@@ -78,13 +78,6 @@ export const socials: Social[] = [
     icon: MailIcon,
     primary: true,
   },
-  {
-    platform: "website",
-    label: "Website",
-    href: "https://samarth.dev",
-    handle: "samarth.dev",
-    icon: GlobeIcon,
-  },
 ];
 
 export const primarySocials = socials.filter((s) => s.primary);

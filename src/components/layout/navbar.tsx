@@ -44,7 +44,7 @@ export function Navbar() {
       <div className="mx-auto flex justify-center px-4 pt-3 sm:pt-4">
         <nav
           className={cn(
-            "flex w-full max-w-3xl items-center justify-between gap-2 rounded-full border px-3 py-2 transition-all duration-500 ease-[var(--ease-out-expo)]",
+            "flex w-full max-w-3xl items-center justify-between gap-2 rounded-full border px-3 py-2 transition-all duration-500 ease-out-expo",
             scrolled
               ? "glass border-line-strong shadow-[0_8px_32px_-12px_rgba(0,0,0,0.6)]"
               : "border-transparent bg-transparent",
@@ -91,7 +91,7 @@ export function Navbar() {
             onClick={() => setOpen((v) => !v)}
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
-            className="flex size-9 items-center justify-center rounded-full text-ink-soft transition-colors hover:bg-white/[0.06] hover:text-ink md:hidden"
+            className="flex size-9 items-center justify-center rounded-full text-ink-soft transition-colors hover:bg-white/6 hover:text-ink md:hidden"
           >
             {open ? <CloseIcon className="size-5" /> : <MenuIcon className="size-5" />}
           </button>
@@ -134,8 +134,8 @@ export function Navbar() {
                         className={cn(
                           "flex items-center justify-between rounded-2xl border border-line px-5 py-4 text-2xl font-medium tracking-tight transition-colors",
                           active
-                            ? "bg-white/[0.05] text-ink"
-                            : "text-ink-soft hover:bg-white/[0.03]",
+                            ? "bg-white/5 text-ink"
+                            : "text-ink-soft hover:bg-white/3",
                         )}
                       >
                         {item.label}

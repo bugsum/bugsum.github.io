@@ -31,7 +31,7 @@ export default function ContactPage() {
               href={`mailto:${contact.email}`}
               className="group flex flex-col gap-3 rounded-2xl border border-line bg-surface/30 p-6 transition-all duration-500 hover:border-line-strong hover:bg-surface/60"
             >
-              <span className="flex size-11 items-center justify-center rounded-full border border-line bg-white/[0.03] text-ink-soft transition-colors group-hover:text-ink">
+              <span className="flex size-11 items-center justify-center rounded-full border border-line bg-white/3 text-ink-soft transition-colors group-hover:text-ink">
                 <MailIcon className="size-5" />
               </span>
               <div>
@@ -43,7 +43,7 @@ export default function ContactPage() {
             </a>
 
             <div className="flex items-center gap-3 rounded-2xl border border-line bg-surface/30 p-6">
-              <span className="flex size-11 items-center justify-center rounded-full border border-line bg-white/[0.03] text-ink-soft">
+              <span className="flex size-11 items-center justify-center rounded-full border border-line bg-white/3 text-ink-soft">
                 <ClockIcon className="size-5" />
               </span>
               <div>
