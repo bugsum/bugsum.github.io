@@ -14,6 +14,13 @@ import { cn } from "@/lib/utils";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
+/**
+ * On static hosting (e.g. GitHub Pages) there is no `/api/contact` server
+ * route, so the build sets NEXT_PUBLIC_CONTACT_MODE=mailto and the form
+ * composes an email instead of POSTing. Defaults to the API route otherwise.
+ */
+const CONTACT_MODE = process.env.NEXT_PUBLIC_CONTACT_MODE ?? "api";
+
 const empty: ContactInput = {
   name: "",
   email: "",
@@ -41,6 +48,24 @@ export function ContactForm() {
     const validation = validateContact(values);
     if (Object.keys(validation).length > 0) {
       setErrors(validation);
+      return;
+    }
+
+    // Static hosting: no server route — hand off to the user's email client.
+    if (CONTACT_MODE === "mailto") {
+      const lines = [
+        values.message,
+        "",
+        `— ${values.name}${values.company ? ` · ${values.company}` : ""}`,
+        values.email,
+      ];
+      const params = new URLSearchParams({
+        subject: values.subject,
+        body: lines.join("\n"),
+      });
+      window.location.href = `mailto:${contact.email}?${params.toString()}`;
+      setStatus("success");
+      setValues(empty);
       return;
     }
 

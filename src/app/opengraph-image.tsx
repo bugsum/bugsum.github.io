@@ -1,6 +1,9 @@
 import { ImageResponse } from "next/og";
 import { personal } from "@/config/personal";
 
+// Render the OG image once at build time (required for `output: export`).
+export const dynamic = "force-static";
+
 export const alt = `${personal.name} — ${personal.title}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

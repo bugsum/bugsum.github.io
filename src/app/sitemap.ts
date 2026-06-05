@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { seo } from "@/config/seo";
 import { getPostSlugs } from "@/lib/blog";
 
+// Emit a static sitemap.xml at build time (required for `output: export`).
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = seo.url;
   const now = new Date();
